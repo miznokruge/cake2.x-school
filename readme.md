@@ -12,9 +12,13 @@ todo:
 
 
 Fitur:
+
 1. Manajemen Menu /menus
+
 2. Manajemen Hak Akses /permissions
+
 3. Manajemen User
+
 4. Data sekolah, guru, murid, nilai dan mata pelajaran
 
 
