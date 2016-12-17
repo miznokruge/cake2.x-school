@@ -10,6 +10,18 @@ todo:
 
 4. Done :)
 
+
+Fitur:
+1. Manajemen Menu /menus
+2. Manajemen Hak Akses /permissions
+3. Manajemen User
+4. Data sekolah, guru, murid, nilai dan mata pelajaran
+
+
+
+
+
+
 Video : https://youtu.be/IzSNU-0TSwI
 
 Apabila ada yang mau ditanyakan bisa ke fb saya : https://www.facebook.com/mizno.kruge
