@@ -1,5 +1,4 @@
 <?php
-
 $cakeDescription = __d('cake_dev', 'Home');
 header("Cache-Control: no-cache,no-store,must-revalidate");
 header("Expires: -1");
@@ -36,8 +35,8 @@ $user_group_id = $this->Session->read("UserAuth.User.user_group_id");
         <link rel="stylesheet" href="custom.css"/>
         <script src="/plugins/bootstrap-validator/bootstrapValidator.min.js"></script>
         <?php
-        echo $this->Html->script(array('jquery.validationEngine-en','jquery.validationEngine'));
-        echo $this->Html->css(array('animate', 'jquery.fancybox', 'select2','jquery.treegrid'));
+        echo $this->Html->script(array('jquery.validationEngine-en', 'jquery.validationEngine'));
+        echo $this->Html->css(array('animate', 'jquery.fancybox', 'select2', 'jquery.treegrid'));
         echo $this->Html->css(array('Aristo.css', 'validationEngine.jquery.css'));
         echo $scripts_for_layout;
         if (isset($cssIncludes)) {
@@ -52,19 +51,19 @@ $user_group_id = $this->Session->read("UserAuth.User.user_group_id");
         }
         if ($this->UserAuth->isLogged()) {
             ?>
-        <script type="text/javascript">
-            var loggedin = 1;
-<?php if ($this->Session->read("Message.flash.message") != '') { ?>
-            var global_flash_message = "<?php echo $this->Session->read("Message.flash.message") ?>";
-            var global_flash_message_out = 1;
-<?php } else { ?>
-            var global_flash_message_out = 0;
-<?php } ?>
-        </script>
+            <script type="text/javascript">
+                var loggedin = 1;
+    <?php if ($this->Session->read("Message.flash.message") != '') { ?>
+                    var global_flash_message = "<?php echo $this->Session->read("Message.flash.message") ?>";
+                    var global_flash_message_out = 1;
+    <?php } else { ?>
+                    var global_flash_message_out = 0;
+    <?php } ?>
+            </script>
         <?php } else { ?>
-        <script type="text/javascript">
-            var loggedin = 0;
-        </script>
+            <script type="text/javascript">
+                var loggedin = 0;
+            </script>
         <?php } ?>
 
     </head>
@@ -234,21 +233,21 @@ $user_group_id = $this->Session->read("UserAuth.User.user_group_id");
                 <!--===================================================-->
                 <div id="content-container">
                     <?php if ($this->Session->read("Message.flash.message")) { ?>
-                    <script type="text/javascript">
-                        e.preventDefault();
-                        var t = nifty.randomInt(0, 8),
-                                n = function () {
-                                    return nifty.randomInt(0, 5) < 4 ? 3e3 : 0
-                                }();
-                        $.niftyNoty({
-                            type: 'danger',
-                            icon: 'fa fa-times fa-lg',
-                            title: function () {
-                                return n > 0 ? "Autoclose Alert" : "Sticky Alert Box"
-                            }(),
-                            message: "<?php echo $this->Session->read("Message.flash.message"); ?>.",
-                            timer: 3000});
-                    </script>
+                        <script type="text/javascript">
+                            e.preventDefault();
+                            var t = nifty.randomInt(0, 8),
+                                    n = function () {
+                                        return nifty.randomInt(0, 5) < 4 ? 3e3 : 0
+                                    }();
+                            $.niftyNoty({
+                                type: 'danger',
+                                icon: 'fa fa-times fa-lg',
+                                title: function () {
+                                    return n > 0 ? "Autoclose Alert" : "Sticky Alert Box"
+                                }(),
+                                message: "<?php echo $this->Session->read("Message.flash.message"); ?>.",
+                                timer: 3000});
+                        </script>
                     <?php } ?>
                     <div id="page-content">
                         <?php echo $content_for_layout; ?>
@@ -311,29 +310,37 @@ $user_group_id = $this->Session->read("UserAuth.User.user_group_id");
                                         foreach ($menus as $menu) {
                                             if ((int) $menu['Menu']['enabled'] == 1) {
                                                 ?>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa <?php echo $menu['Menu']['icon']; ?>"></i>
-                                                <span class="menu-title"><?php echo ucwords($menu['Menu']['name']); ?></span>
-                                                <i class="arrow"></i>
-                                            </a>
-                                                    <?php if (count($menu['children']) > 0) { ?>
-                                            <ul class="collapse" aria-expanded="false" style="height: 0px;">
-                                                            <?php foreach ($menu['children'] as $mc) { ?>
                                                 <li>
-                                                    <a href="#"><?php echo $mc['Menu']['name'] ?></a>
+                                                    <a href="#">
+                                                        <i class="fa <?php echo $menu['Menu']['icon']; ?>"></i>
+                                                        <span class="menu-title"><?php echo ucwords($menu['Menu']['name']); ?></span>
+                                                        <i class="arrow"></i>
+                                                    </a>
+                                                    <?php if (count($menu['children']) > 0) { ?>
+                                                        <ul class="collapse" aria-expanded="false" style="height: 0px;">
+                                                            <?php foreach ($menu['children'] as $mc) { ?>
+                                                                <li>
                                                                     <?php if (count($mc['children']) > 0) { ?>
-                                                    <ul class="collapse">
+                                                                    <a href="#"><?php echo $mc['Menu']['name'] ?></a>                                                                    
+                                                                        <ul class="collapse">
                                                                             <?php foreach ($mc['children'] as $c) { ?>
-                                                        <li><a href="/<?php echo $c['Menu']['controller'] . '/' . $c['Menu']['action']; ?>"><?php echo ucwords(str_replace("-", " ", $c['Menu']['name'])) ?></a></li>
+                                                                                <li><a href="/<?php echo $c['Menu']['controller'] . '/' . $c['Menu']['action']; ?>"><?php echo ucwords(str_replace("-", " ", $c['Menu']['name'])) ?></a></li>
                                                                             <?php } ?>
-                                                    </ul>
-                                                                    <?php } ?>
-                                                </li>
+                                                                        </ul>
+                                                                    <?php }else{?>
+                                                                    <a href="/<?php echo $mc['Menu']['controller'] ?>/<?php echo $mc['Menu']['action'] ?>"><?php echo $mc['Menu']['name'] ?></a>         
+                                                                    <?php }?>
+                                                                </li>
                                                             <?php } ?>
-                                            </ul>
+                                                        </ul>
+                                                    <?php } else { ?>
+                                                        <a href="/<?php echo ucwords($menu['Menu']['controller']); ?>/<?php echo ucwords($menu['Menu']['action']); ?>">
+                                                            <i class="fa <?php echo $menu['Menu']['icon']; ?>"></i>
+                                                            <span class="menu-title"><?php echo ucwords($menu['Menu']['name']); ?></span>
+                                                            <i class="arrow"></i>
+                                                        </a>
                                                     <?php } ?>
-                                        </li>
+                                                </li>
                                             <?php } ?>
                                         <?php } ?>
                                     </ul>
@@ -690,7 +697,7 @@ $user_group_id = $this->Session->read("UserAuth.User.user_group_id");
                                                     <!--===================================================-->
                                                     <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
                                                     <!--===================================================-->
-                                                    <?php //echo $this->element('chat');  ?>
+                                                    <?php //echo $this->element('chat');   ?>
                                                     </div>
                                                     <script src="/plugins/fast-click/fastclick.min.js"></script>
                                                     <script src="/js/nifty.min.js"></script>
