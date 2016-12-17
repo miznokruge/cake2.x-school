@@ -10,6 +10,8 @@ todo:
 
 4. Done :)
 
+Video : https://youtu.be/IzSNU-0TSwI
+
 Apabila ada yang mau ditanyakan bisa ke fb saya : https://www.facebook.com/mizno.kruge
 
 Disclaimer: this app totally have no warranty, use on your own risk
