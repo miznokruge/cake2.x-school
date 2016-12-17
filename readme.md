@@ -1,18 +1,18 @@
-This is MTI ERP source repository
-
-MTI ERP using CakePHP 2.x
+Skeleton App menggunakan CakePHP 2.x
 
 todo:
 
-1. dump database.sql to your database server ( Mysql)
+1. dump schema.sql ke database yang anda buat
 
-2. change setting in app/config/database.php (if needed)
+2. rename core_sample.php menjadi core.php dan sesuikan (jika perlu)
 
-3. done :)
+3. rename database_sample.php menjadi database_sample.php dan sesuikan dengan settingan database(jika perlu)
 
+4. Done :)
 
+Apabila ada yang mau ditanyakan bisa ke fb saya : https://www.facebook.com/mizno.kruge
 
-test
+Disclaimer: this app totally have no warranty, use on your own risk
 
 
 
