@@ -67,7 +67,6 @@ header("Expires: -1");
                     <a class="box-inline" href="/">
 <!--                        <img alt="Nifty Admin" src="<?php echo $this->webroot; ?>img/logo/<?php echo $this->Info->application('logo'); ?>" class="brand-icon">-->
                         <span class="brand-title"><?php echo $this->Info->application('app_name'); ?></span>
-                        <span class="text-thin" style="font-size: 11px;"><?php echo $this->Info->application('company_name'); ?></span>
                     </a>
                 </div>
             </div>

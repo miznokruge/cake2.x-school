@@ -6,7 +6,7 @@ todo:
 
 2. rename core_sample.php menjadi core.php dan sesuikan (jika perlu)
 
-3. rename database_sample.php menjadi database_sample.php dan sesuikan dengan settingan database(jika perlu)
+3. rename database_sample.php menjadi database.php dan sesuikan dengan settingan database(jika perlu)
 
 4. Done :)
 
