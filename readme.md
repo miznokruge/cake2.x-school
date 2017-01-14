@@ -24,6 +24,13 @@ Fitur:
 
 
 
+Demo Aplikasi:
+
+http://school.cakephp.gaivo-systemworks.com/
+
+username: admin, 
+password: 123456
+
 
 
 Video : https://youtu.be/IzSNU-0TSwI
